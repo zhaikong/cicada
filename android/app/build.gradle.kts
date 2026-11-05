@@ -56,3 +56,7 @@ val copyStrings by tasks.registering(Sync::class) {
     }
 }
 tasks.named("preBuild") { dependsOn(copyStrings) }
+
+tasks.named("preBuild") {
+    dependsOn(rootProject.tasks.named("startApi"))
+}
